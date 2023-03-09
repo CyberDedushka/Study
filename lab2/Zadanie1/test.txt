@@ -1,7 +1,0 @@
-Oleg     Mongol    4.5
-Araraton Borsoniny 6
-Ilya     Stepkin   19
-Oleg     Mongol    7.2
-Oleg     Mongol    0.2
-Araraton Borsoniny 10
-Ilya     Stepkin   11
