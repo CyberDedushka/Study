@@ -67,9 +67,16 @@ class Human(Player):
     def move(self):
         field = 0
         while field not in NUMBERS:
-            field = int(input('Выберите клетку из доступных: '))
+            try:
+                field = int(input('Выберите клетку из доступных: '))
+            except ValueError:
+                print("Ошибка: введите число от 1 до 9.")
+                continue
+            if field not in NUMBERS:
+                print("Ошибка: это поле уже занято или недоступно.")
         self.write_marker(field)
         self.progress.append(field)
+
 
 
 class PC(Player):

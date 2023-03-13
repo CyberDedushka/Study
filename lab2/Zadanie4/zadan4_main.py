@@ -1,24 +1,26 @@
-import time
-
-
 class Game:
-
-    def __init__(self, numb):
-        while (100 < numb) or (numb < 0):
-            numb = int(input('Введите число больше 0 и меньше 100: '))
-        self.numb = numb
-        print(f'{self.numb} ', end='')
-        time.sleep(2)
-        print('\r', end='')
-        self.child_numb = int(input('Введите число: '))
+    def __init__(self):
+        while True:
+            try:
+                self.number = int(input("Введите число от 0 до 100: "))
+                if self.number < 0 or self.number > 100:
+                    raise ValueError("Число должно быть от 0 до 100")
+                break
+            except ValueError as e:
+                print(f"Ошибка: {e}")
 
     def check(self):
-        if self.numb != self.child_numb:
-            raise Exception
-        else:
-            print('Верно')
+        while True:
+            try:
+                guess = int(input("Введите угаданное число: "))
+                if guess != self.number:
+                    raise ValueError("Неверное число")
+                print("Правильно!")
+                break
+            except ValueError as e:
+                print(f"Ошибка: {e}")
 
 
-a = Game(int(input('Введите число для запоминания: ')))
-a.check()
-
+# Пример использования класса
+game = Game()
+game.check()
